@@ -15,21 +15,21 @@ git branch: 'main', credentialsId: 'vprasadk111', url: 'https://github.com/vpras
 }
 
 
-stage('persmission to script') {
+stage('terraform initialize') {
 
 steps {
 
-sh 'chmod 755 test.sh'
+sh 'terraform init'
 
 }
 
 }
 
-stage('run script') {
+stage('terraform plan') {
 
 steps {
 
-sh './test.sh'
+sh 'terraform plan'
 
 }
 
